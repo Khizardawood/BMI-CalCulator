@@ -31,3 +31,7 @@ const ConstentTextLabel = TextStyle(
   fontSize: 15,
   fontWeight: FontWeight.bold,
 );
+const ConstentTextLabe2 = TextStyle(
+  fontSize: 60,
+  fontWeight: FontWeight.w900,
+);

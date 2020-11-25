@@ -93,22 +93,30 @@ class _InputPageState extends State<InputPage> {
     ),
     Expanded(
     child: Row(
+    mainAxisAlignment: MainAxisAlignment.center,
     children: [
-    Expanded(
-    child: Repeate_contanier(
-    colors: Color(0xFF1D1E33),
+    Text(
+    slider_height.toString(),
+    style: ConstentTextLabe2,
     ),
-    ),
-    Expanded(
-    child: Repeate_contanier(
-    colors: Color(0xFF1D1E33),
-    ),
+    Text(
+    'cm',
+    style: ConstentTextLabel,
     ),
     ],
     ),
-    ),
-    ],
-    ),
+    Slider(
+    value: slider_height.toDouble(),
+    min: 100.0,
+    max: 220.0,
+    activeColor: Colors.redAccent,
+    inactiveColor: Colors.white,
+    onChanged: (double newvalue) {
+    setState(() {
+    slider_height = newvalue.round();
+    });
+    },
+    )
     );
     }
     }
