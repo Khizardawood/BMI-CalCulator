@@ -1,17 +1,29 @@
 import 'package:flutter/material.dart';
 
-class Repeate_contanier extends StatelessWidget {
-  Repeate_contanier({@required this.colors});
-  Repeate_contanier({@required this.colors, this.cardWidge});
-  final Color colors;
-  final Widget cardWidge;
+class RepeateTextIcon extends StatelessWidget {
+  RepeateTextIcon({@required this.iconData, this.Label});
+  final IconData iconData;
+  final String Label;
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: cardWidge,
-      margin: EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-          color: colors, borderRadius: BorderRadiusDirectional.circular(15.0)),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          iconData,
+          //FontAwesomeIcons.male,
+          size: 50.0,
+        ),
+        SizedBox(height: 10),
+        Text(
+          Label,
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+          ),
+        )
+      ],
     );
   }
 }
