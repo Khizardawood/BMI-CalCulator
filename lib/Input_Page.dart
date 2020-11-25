@@ -68,13 +68,17 @@ class _InputPageState extends State<InputPage> {
     // ),
     ),
     Expanded(
-    /*child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        //updateColor(Gender.female);
-                        selectGender = Gender.female;
-                      });
-                    },*/
+    cardWidge: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+    Text(
+    'WEGHT',
+    style: ConstentTextLabel,
+    ),
+    Text(slider_weight.toString(),
+    style: ConstentTextLabe2),
+    ],
+    ),
     child: Repeate_contanier(
     onpressed: () {
     setState(
