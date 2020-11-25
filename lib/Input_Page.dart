@@ -12,18 +12,7 @@ class InputPage extends StatefulWidget {
   _InputPageState createState() => _InputPageState();
 }
 class _InputPageState extends State<InputPage> {
-  /*Color maleColor = deactivationcolor;
-  Color femaleColor = deactivationcolor;
-  void updateColor(Gender genderType) {
-    if (genderType == Gender.male) {
-      maleColor = activationcolor;
-      femaleColor = deactivationcolor;
-    }
-    if (genderType == Gender.female) {
-      maleColor = deactivationcolor;
-      femaleColor = activationcolor;
-    }
-  }*/
+
   Gender selectGender;
   int slider_height = 180;
   int slider_weight = 20;
@@ -66,14 +55,7 @@ class _InputPageState extends State<InputPage> {
     ),
     // ),
     ),
-    Expanded(
-    /*child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        //updateColor(Gender.female);
-                        selectGender = Gender.female;
-                      });
-                    },*/
+
     child: Repeate_contanier(
     onpressed: () {
     setState(
@@ -95,42 +77,7 @@ class _InputPageState extends State<InputPage> {
     ],
     ),
     ),
-    Expanded(
-    child: Repeate_contanier(
-    colors: Color(0xFF1D1E33),
-    cardWidge: Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-    Text('HEIGHT', style: ConstentTextLabel),
-    Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-    Text(
-    slider_height.toString(),
-    style: ConstentTextLabe2,
-    ),
-    Text(
-    'cm',
-    style: ConstentTextLabel,
-    ),
-    ],
-    ),
-    Slider(
-    value: slider_height.toDouble(),
-    min: 100.0,
-    max: 220.0,
-    activeColor: Colors.redAccent,
-    inactiveColor: Colors.white,
-    onChanged: (double newvalue) {
-    setState(() {
-    slider_height = newvalue.round();
-    });
-    },
-    )
-    ],
-    ),
-    ),
-    ),
+
     Expanded(
     child: Row(
     children: [
@@ -236,7 +183,39 @@ margin: EdgeInsets.only(top: 10),
 height: 80.0,
 )
 
-
+Expanded(
+child: Repeate_contanier(
+cardWidge: Column(
+mainAxisAlignment: MainAxisAlignment.center,
+children: [
+Text('AGE', style: ConstentTextLabel),
+Text('$sliderage', style: ConstentTextLabe2),
+Row(
+mainAxisAlignment: MainAxisAlignment.center,
+children: [
+RoundIcon(
+icondata: FontAwesomeIcons.minus,
+onPress: () {
+setState(() {
+sliderage--;
+});
+},
+),
+SizedBox(width: 5),
+RoundIcon(
+icondata: FontAwesomeIcons.plus,
+onPress: () {
+setState(() {
+sliderage++;
+});
+},
+),
+],
+)
+],
+),
+colors: Color(0xFF1D1E33)),
+),
 
 ],
 ),
