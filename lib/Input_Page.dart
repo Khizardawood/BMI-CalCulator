@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'Repeate_contanier.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
 }
+
 class _InputPageState extends State<InputPage> {
   @override
   Widget build(BuildContext context) {
@@ -20,11 +22,19 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: Repeate_contanier(
                     colors: Color(0xFF1D1E33),
+                    cardWidge: RepeateTextIcon(
+                      iconData: FontAwesomeIcons.male,
+                      Label: "MALE",
+                    ),
                   ),
                 ),
                 Expanded(
                   child: Repeate_contanier(
                     colors: Color(0xFF1D1E33),
+                    cardWidge: RepeateTextIcon(
+                      iconData: FontAwesomeIcons.female,
+                      Label: "FEMALE",
+                    ),
                   ),
                 ),
               ],
@@ -57,15 +67,30 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-class Repeate_contanier extends StatelessWidget {
-  Repeate_contanier({@required this.colors});
-  final Color colors;
+class RepeateTextIcon extends StatelessWidget {
+  RepeateTextIcon({@required this.iconData, this.Label});
+  final IconData iconData;
+  final String Label;
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-          color: colors, borderRadius: BorderRadiusDirectional.circular(15.0)),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          iconData,
+          //FontAwesomeIcons.male,
+          size: 50.0,
+        ),
+        SizedBox(height: 10),
+        Text(
+          Label,
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+          ),
+        )
+      ],
     );
   }
 }
